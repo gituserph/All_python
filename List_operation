@@ -1,0 +1,5 @@
+list=raw_input("enter numbers separated by space").split(' ')
+for i in list:
+    i=int(i)
+    if i<5:
+	    print i
