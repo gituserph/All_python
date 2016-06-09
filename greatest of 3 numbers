@@ -1,0 +1,12 @@
+print "enter three numbers separated by a comma"
+one,two,three=raw_input().split(',')
+one=int(one)
+two=int(two)
+three=int(three)
+
+if one>=two and one>=three:
+    print "The greatest no is %d" %one
+elif two>=one and two>=three:
+    print "the greatest no is %d" %two
+else:
+    print "the greatest no is %d" %three
