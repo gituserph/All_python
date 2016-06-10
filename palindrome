@@ -1,0 +1,15 @@
+#make a second string thats starts with the highest indexed char of the first string, next the second highest and so on upto the 0th index and then compare
+input=raw_input("Enter a string")
+length=len(input)
+rev=[]
+
+for i in range(length-1,-1,-1): #traverse from highest index to 0
+    rev.append(input[i])
+    
+rev=''.join(rev) #to change ['a','b','c'] to [abc]
+print rev
+
+if input==rev:
+    print "palindrome"
+else:
+    print "not a plaindrome"
