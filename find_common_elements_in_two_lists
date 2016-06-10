@@ -3,8 +3,6 @@ list2=raw_input("enter another list of numbers separated by commas").split(',')
 l1=len(list1)
 l2=len(list2)
 list3=[]
-print list1
-print list2
 for i in range(0,l1):
     for j in range(0,l2):
 	    if list1[i]==list2[j]:
