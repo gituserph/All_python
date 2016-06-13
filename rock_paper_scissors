@@ -1,0 +1,11 @@
+import random
+user=raw_input("Enter your choice: rock,paper,scissors").lower()
+options=('scissors','paper','rock')
+computer=random.choice(options)
+print "the computer chooses %s" %computer
+if user==computer:
+    print "Game tied"
+elif ((user=="rock" and computer=="scissors") or (user=="paper" and computer=="rock") or (user=="scissors" and computer=="paper")):
+    print ("You win!!")
+else:
+    print ("Sorry, the computer wins")
