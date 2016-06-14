@@ -1,7 +1,12 @@
 import random
-list1=random.sample(xrange(30),7)
-list2=random.sample(xrange(30),10)
-list3=[i for i in list1 for j in list2 if i==j]
+list1=random.sample(xrange(30),random.randint(5,20))
+list2=random.sample(xrange(30),random.randint(5,20))
+
+if len(list1)>=len(list2):
+	list3=[i for i in list2 for j in list1 if i==j]
+else:
+	list3=[i for i in list1 for j in list2 if i==j]
+
 print "the first list is %r" %list1
 print "the second list is %r" %list2
 print "the common elemenst are %r" %list3
