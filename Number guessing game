@@ -1,0 +1,22 @@
+import random
+number=random.randint(1,9)
+def end(input):
+	if input==0:
+		exit()
+user=int(raw_input("pick a number in the range 1 to 9 or 0 to exit"))
+end(user)
+if number==user:
+    print "Good picking, you think like the computer"
+guess=1
+while number!=user:
+	guess+=1
+	if user<number:
+		print "sorry,you guessed low. Guess again or type 0 to exit"
+		user=int(raw_input())
+		end(user)
+	if user>number:
+		print "sorry,you guessed high. Guess again or type 0 to exit"
+		user=int(raw_input())
+		end(user)
+	
+print "you guessed the number in %d tries" %guess
