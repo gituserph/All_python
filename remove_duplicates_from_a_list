@@ -9,6 +9,15 @@ def remove_dups_list(a):
 	a.append(last)
 	print "the list with duplicate elements removed is %r" %a
 
-x=[1,1,1,1,1,1,6,6,6]
+def remove_dups_list_2(a):
+	new=[]
+	for i in a:
+		if i not in new:
+			new.append(i)
+	
+	print "the list with duplicate elements removed is %r" %new
+
+x=[1,2,3,1,2,3,1,2,3]
 remove_dups_sets(x)
 remove_dups_list(x)
+remove_dups_list_2(x)
