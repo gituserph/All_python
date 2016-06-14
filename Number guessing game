@@ -11,12 +11,22 @@ guess=1
 while number!=user:
 	guess+=1
 	if user<number:
-		print "sorry,you guessed low. Guess again or type 0 to exit"
-		user=int(raw_input())
-		end(user)
-	if user>number:
-		print "sorry,you guessed high. Guess again or type 0 to exit"
-		user=int(raw_input())
-		end(user)
+		if user+1<number or user+2<number:
+			print "sorry,you guessed too low. Guess again or type 0 to exit"
+			user=int(raw_input())
+			end(user)
+		else:
+			print "sorry,you guessed low.Guess again or type 0 to exit"
+			user=int(raw_input())
+			end(user)
+	elif user>number:
+		if user-1>number or user-2>number:
+			print "sorry,you guessed too high. Guess again or type 0 to exit"
+			user=int(raw_input())
+			end(user)
+		else:
+			print "sorry,you guess high. Guess again or type 0 to exit"
+			user=int(raw_input())
+			end(user)
 	
 print "you guessed the number in %d tries" %guess
