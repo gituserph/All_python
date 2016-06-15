@@ -1,0 +1,9 @@
+def string_rev(str):
+	new=str.split()
+	rev=[]
+	for i in range(len(new)-1,-1,-1):
+		rev.append(new[i])	
+	print rev
+
+string="this is a program"
+string_rev(string)
