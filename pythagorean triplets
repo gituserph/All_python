@@ -1,0 +1,12 @@
+
+def triplet_check(x,y,z):
+		
+	if input[0]*input[0]+input[1]*input[1]==input[2]*input[2]:
+		print "they are a pythagorean triplet"
+	else:
+		print "not a triplet"
+
+input=raw_input("enter 3 numbers to check if they form a pythagorean triplet separated by commas").split(',')
+input=[int(i) for i in input]
+input=sorted(input)
+triplet_check(input[0],input[1],input[2])
