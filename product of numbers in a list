@@ -1,0 +1,10 @@
+def product(list):
+	list=list.split(',')
+	result=1
+	for i in list:
+		i=int(i)
+		result=result*i
+	return result
+
+input=raw_input("Enter a set of numbers separated by a comma")
+print product(input)
