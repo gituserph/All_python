@@ -1,0 +1,14 @@
+#sort a list of files based on extension
+list1=['a.c', 'a.py', 'b.py', 'bar.txt', 'foo.txt', 'a.d']
+list1.sort(key=lambda x:x.split('.')[2])
+print list1
+
+#sort a list of numbers based on the second number
+list2=[[1,2],[2,1],[3,8],[8,2]]
+list2.sort(key=lambda x:x[1])
+print list2
+
+#sort a list of files based on the first name
+list3=['a.c', 'aba.py','x.c', 'b.py', 'bar.txt', 'foo.txt']
+list3.sort(key=lambda x:x.split('.')[0])
+print list3
