@@ -1,0 +1,14 @@
+def head(filename):
+	f=open(filename).readlines()
+	for i in f[0:10:1]:
+		print i
+
+def tail(filename):
+	f=open(filename).readlines()
+	for i in f[len(f)-10:len(f):1]:
+		print i
+
+print "***********Head***********"
+head('use1.txt')
+print "***********Tail***********"
+tail('use1.txt')
