@@ -1,0 +1,6 @@
+string=raw_input("enter the search string")
+filename='use1.txt'
+f=open(filename).readlines()
+for i in f[::1]:
+	if string in i:
+		print i
