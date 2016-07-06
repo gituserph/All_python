@@ -1,0 +1,7 @@
+f=open('use.txt').readlines()
+for i in f[::1]:
+	words=i.split()
+	rev=[]
+	for i in words[::-1]:
+		rev.append(i)
+	print " ".join(rev)
