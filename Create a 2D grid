@@ -1,0 +1,17 @@
+# Create a list.
+grid=[]
+
+# Append empty lists in first two indexes
+grid.append([])
+grid.append([])
+
+grid[0].append('.')
+grid[0].append('0')
+
+grid[1].append('0')
+grid[1].append('.')
+
+for column in range(len(grid[0])):
+	for row in range(len(grid)):
+		print grid[row][column],
+	print(' ')
