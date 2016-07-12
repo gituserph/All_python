@@ -1,0 +1,10 @@
+spam = ['apples', 'bananas', 'tofu', 'cats','dogs','hkjh']
+
+def add_comma(input):
+	new=''
+	for i in range(0,len(input)-1,1):
+		new+= input[i]+', '
+	new+= 'and ' + input[len(spam)-1]
+	return new
+
+print add_comma(spam)
