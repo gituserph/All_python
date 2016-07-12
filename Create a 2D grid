@@ -15,3 +15,9 @@ for column in range(len(grid[0])):
 	for row in range(len(grid)):
 		print grid[row][column],
 	print(' ')
+
+#for formatting options in the print like space between elements
+for column in range(len(grid[0])):
+	for row in range(len(grid)):
+		print "%s  " %(grid[row][column]),
+	print(' ')
