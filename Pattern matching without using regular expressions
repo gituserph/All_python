@@ -17,7 +17,7 @@ def isphonenumber(num):
 			return False
 	return True
 
-print(isphonenumber("480-307-3554"))
+print(isphonenumber("354-337-7696"))
 print(isphonenumber("adfhdh"))
-print(isphonenumber("4803073554"))
+print(isphonenumber("5685798790"))
 
