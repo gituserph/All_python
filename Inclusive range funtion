@@ -1,0 +1,34 @@
+#inclusive range function
+
+def main():
+	for i in inclusive_range(0,10,1): print i
+	for i in inclusive_range2(10): print i
+
+def inclusive_range(start,stop,step):
+	i=start
+	while i<=stop:
+		yield i
+		i+=step
+
+
+#def inclusive_range(start=0,stop,step=1) throws an error, although optional arguments are allowed. To get around it use a tuple
+
+def inclusive_range2(*args):
+	numargs=len(args)
+	if numargs<1: raise TypeError('requires atleast one argument')
+	elif numargs==1:
+		stop=args[0] # stop=args runs into an infinite loop, use args[0]
+		start=0
+		step=1
+	elif numargs==2:
+		(start,stop)=args
+		step=1
+	elif numargs==3:
+		(start,stop,step)=args
+	else: raise TypeError ('requires atmost 3 arguments, received len(args)')
+	i=start
+	while i<=stop:
+		yield i
+		i+=step
+		
+if __name__=="__main__":main()
