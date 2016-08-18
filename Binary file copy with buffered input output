@@ -1,0 +1,12 @@
+def main():
+	infile=open('C:\\Users\\preeti\\Desktop\\bike.jpg', 'rb')
+	outfile=open("new.jpg",'wb')
+	buffersize =50000  #buffered I/ to be used vs line oriented I/O for text files
+	buffer=infile.read(buffersize)
+	while len(buffer):
+		outfile.write(buffer)
+		print('.')
+		buffer=infile.read(buffersize)
+	print ("done")
+	
+if __name__=="__main__":main()
