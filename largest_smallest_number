@@ -1,0 +1,24 @@
+largest=None
+smallest=None
+list=[]
+while True:
+	num=raw_input("Enter a number")
+	if num=="done": 
+		break
+	try:
+		num=int(num)
+	except:
+		print ("Invalid input")
+	list.append(int(num))
+
+	
+for n in list:
+	if smallest is None:
+		smallest=n
+	if n < smallest:
+		smallest=n
+	if n >= largest:
+		largest=n
+
+print "Largest number %r" %largest
+print "Smallest number %r" %smallest
