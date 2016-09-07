@@ -1,0 +1,12 @@
+import simplegui
+
+def click():
+	print "My first frame"
+
+#name of the frame- sample 100x200 - dimensions
+frame=simplegui.create_frame("Sample",100,200)
+
+#button says Click me and will print My first frame when clicked
+frame.add_button("Click me",click)
+
+frame.start()
