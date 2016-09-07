@@ -1,0 +1,31 @@
+#simplegui structure
+
+try:
+    import simplegui
+except ImportError:
+    import SimpleGUICS2Pygame.simpleguics2pygame as simplegui
+	
+#Def globals - program state
+counter =0
+
+#Def helper func
+def increment():
+	global counter
+	counter+=1
+	
+#Def classes
+
+#Def event handler
+def tick():
+	increment()
+	print counter
+	
+#create a frame
+frame=simplegui.create_frame("simpleGUI Test",100,100)
+
+#register event handler
+timer=simplegui.create_timer(1000,tick)
+
+#start frame and timers
+frame.start()
+timer.start()
