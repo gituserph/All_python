@@ -1,0 +1,14 @@
+#simple event driven program
+try:
+    import simplegui
+except ImportError:
+    import SimpleGUICS2Pygame.simpleguics2pygame as simplegui
+
+#event handler
+def tick():
+	print "tick!"
+
+#Register handler
+timer=simplegui.create_timer(1000,tick)
+
+timer.start()
