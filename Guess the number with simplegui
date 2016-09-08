@@ -1,3 +1,7 @@
+# template for "Guess the number" mini-project
+# input will come from buttons and an input field
+# all output for the game will be printed in the console
+
 import simplegui
 import random
 
@@ -7,7 +11,7 @@ count=7
 
 def new_game():
     global num,count
-    print "A new game has begun. The number was",num,".Guess again"
+    print "A new game has begun"
     range100()
     count=7
   
@@ -28,7 +32,8 @@ def counter():
     count=count-1
     print "You have",count,"guesses remaining"
     if count==0:
-        print "You are out of guesses"
+        print "You lose the game"
+        print "The number was",num
         new_game()
         
         
@@ -56,3 +61,5 @@ frame.add_input("Enter a number",input_guess,100)
 
 # register event handlers for control elements and start frame
 frame.start()
+
+
