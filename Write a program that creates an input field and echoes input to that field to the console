@@ -1,0 +1,11 @@
+#Write a program that creates an input field and echoes input to that field to the console
+
+import simplegui
+
+def print_input(inp):
+    print inp
+    
+frame=simplegui.create_frame("echo",100,200)
+frame.add_input("Enter input",print_input,100)
+
+frame.start()
