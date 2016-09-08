@@ -1,0 +1,58 @@
+import simplegui
+import random
+
+# helper function to start and restart the game
+num=0
+count=7
+
+def new_game():
+    global num,count
+    print "A new game has begun. The number was",num,".Guess again"
+    range100()
+    count=7
+  
+
+# define event handlers for control panel
+def range100():
+    global num
+    num=random.randrange(0,100) 
+    return num
+
+def range1000():
+    global num
+    num=random.randrange(0,1000)
+    return num   
+    
+def counter():
+    global count
+    count=count-1
+    print "You have",count,"guesses remaining"
+    if count==0:
+        print "You are out of guesses"
+        new_game()
+        
+        
+def input_guess(guess):
+    
+    guess=int(guess)
+    print "Guess was",guess
+    
+    if guess < num:
+        print "Higher!"
+        counter()
+    elif guess > num:
+        print "Lower!"
+        counter()
+    else:
+        print "Correct."
+        new_game()
+
+    
+# create frame
+frame=simplegui.create_frame("Number Guess",200,200)
+frame.add_button("Range 1-100",range100,100)
+frame.add_button("Range 1-1000", range1000,100)
+frame.add_input("Enter a number",input_guess,100)
+
+# register event handlers for control elements and start frame
+frame.start()
