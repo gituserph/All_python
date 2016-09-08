@@ -1,0 +1,15 @@
+# Write event handlers print_hello() and print_goodbye() for the two buttons with labels "Hello" and "Goodbye" defined in the program template below. Pressing these buttons should print the messages "Hello" and "Goodbye", respectively, in the console. 
+
+import simplegui
+
+def print_hello():
+	print "Hello"
+	
+def print_goodbye():
+	print "Goodbye"
+	
+frame=simpleui.create_frame("Greeting",100,200)
+frame.add_button("Hello",print_hello,100)
+frame.add_button("Goodbye",print_goodbye,100)
+
+frame.start()
