@@ -1,0 +1,18 @@
+#Write a program allows a user to enter a word in an input field, translates that word into Pig Latin and prints this translation in the console.
+
+import simplegui
+
+def pig_latin(word):
+	
+	word_new=word[1:]
+	word_new=word_new+word[0]+"ay"
+	return word_new
+
+def get_input(txt):
+	print "input text is" txt
+	print pig_latin(txt)
+	
+frame=simplegui.create_frame("pig_latin",100,200)
+frame.add_input("Enter input",get_input,100)
+
+frame.start()
