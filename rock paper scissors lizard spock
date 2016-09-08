@@ -1,0 +1,32 @@
+import math
+import random
+
+def assign_num(input):
+	if input=="rock": num=0
+	elif input=="spock":num=1
+	elif input=="paper":num=2
+	elif input=="lizard":num=3
+	elif input=="scissors":num=4
+	else: print "selection is invalid"
+	return num
+	
+	
+def rpsls(name):
+	
+	player_num=assign_num(name)
+	computer=random.choice(["rock","spock","paper","lizard","scissors"])
+	computer_num=assign_num(computer)
+	print "The computer chooses",computer
+		
+	if int(math.fabs(player_num-computer_num))==1:
+		print "Player selected",name,"Computer selected",computer,"Player wins"
+	elif int(math.fabs(player_num-computer_num))==2:
+		print "Player selected",name,"Computer selected",computer,"Player wins"
+	elif int(math.fabs(player_num-computer_num))==3:
+		print "Computer selected",computer,"Player selected",name,"Computer wins"
+	elif int(math.fabs(player_num-computer_num))==4:
+		print "Computer selected",computer,"Player selected",name,"Computer wins"
+	elif int(math.fabs(player_num-computer_num))==0:
+		print "Game ties"
+		
+rpsls("spock")
