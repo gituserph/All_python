@@ -1,0 +1,36 @@
+#Write a function format_time that takes an integer number of seconds in range(0, 3600) and converts it into string that states the number of minutes and seconds
+
+import random
+
+value=random.randrange(0,3600)
+
+def convert(value):
+	
+	min=value//60
+	sec=value%60
+	
+	min_string=convert_units(min,"minute")
+	sec_string=convert_units(sec,"second")
+
+	if min==0 and sec ==0:
+		return "None"
+	elif min==0:
+		return sec_string
+	elif sec==0:
+		return min_string
+	else:
+		return min_string + " " + sec_string
+		
+def convert_units(value,name):
+	if value>1:
+		string=str(value)+ " " + name +"s"
+	else:
+		string=str(value)+ " " + name
+	return string
+		
+print convert(value)
+
+print convert(1120)
+print convert(3600)
+print convert(0)
+print convert (1234)
