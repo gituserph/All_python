@@ -1,0 +1,54 @@
+#Interactive program to convert a dollar amount to a string
+
+import simplegui
+
+#convert units
+value=3.12
+
+def convert_units(value,name):
+    if value>1:
+        string=str(value)+ " " + name + "s"
+    else:
+        string=str(value)+ " " + name
+    return string
+    
+    
+#convert values
+
+def convert(value):
+    dollar=int(value)
+    cent=int(round(100*(value-dollar)))
+    
+    dollar_string=convert_units(dollar,"dollar")
+    cent_string=convert_units(cent,"cent")
+    
+    if dollar==0 and cent == 0:
+        return "broke"
+    elif dollar==0:
+        return cent_string
+    elif cent==0:
+        return dollar_string
+    else:
+        return dollar_string + " and " +  cent_string
+        
+        
+#define draw handler
+def draw(canvas):
+    canvas.draw_text(convert(value),[100,100],20,"Red")
+
+#define input handler
+
+def input_handler(text):
+    global value
+    value=float(text)
+    
+#create frame
+
+frame=simplegui.create_frame("Convert",300,200)
+frame.add_input("Enter value",input_handler,100)
+
+#register handler
+frame.set_draw_handler(draw)
+
+#start frame
+frame.start()
