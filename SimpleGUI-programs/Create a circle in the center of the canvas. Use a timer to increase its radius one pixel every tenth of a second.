@@ -1,0 +1,32 @@
+
+#Create a circle in the center of the canvas. Use a timer to increase its radius one pixel every tenth of a second.
+
+import simplegui
+
+#global state
+
+radius=1.0
+width=400
+height=500
+
+# time handler
+
+def tick():
+    global radius
+    radius+=1
+    frame.set_draw_handler(draw)
+    if radius>width/2 or radius>height/2:
+        radius=1.0
+    
+def draw(canvas):
+    canvas.draw_circle([width/2,height/2],radius,5,"Red")
+    
+    
+#register handler
+
+frame=simplegui.create_frame("Test",width,height)
+timer=simplegui.create_timer(100,tick)
+
+#start timer, frame
+frame.start()
+timer.start()
