@@ -1,0 +1,21 @@
+#The following program should count upward from zero. Print the counter values 0, 1, 2, … to the console.
+
+import simplegui
+
+#global state
+
+counter=0
+
+#define timer handler
+def timer1():
+    global counter
+    print counter
+    counter+=1
+    
+#create timer
+
+timer=simplegui.create_timer(1000,timer1)
+
+#start timer
+
+timer.start()
