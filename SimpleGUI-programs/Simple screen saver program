@@ -1,0 +1,38 @@
+import simplegui
+import random
+
+#global state
+message="Python is fun!"
+width=300
+height=300
+position=[0,0]
+interval=2000
+
+#define input,timer and draw handler
+
+def text(input):
+    global message
+    message=input
+    
+def draw(canvas):
+    canvas.draw_text(message,position,32,"Red")
+    
+def tick():
+    global position
+    x=random.randint(0,width)
+    y=random.randint(0,height)
+    position=(x,y)
+
+#create frame
+
+frame = simplegui.create_frame("Test",width,height)
+
+
+#register handler
+timer=simplegui.create_timer(interval,tick)
+frame.add_input("Message",text,100)
+frame.set_draw_handler(draw)
+
+#start frame and timer
+frame.start()
+timer.start()
