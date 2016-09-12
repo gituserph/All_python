@@ -1,0 +1,45 @@
+#Method 1
+import simplegui
+
+def timer1():
+    frame.set_canvas_background("Red")
+
+def timer2():
+    frame.set_canvas_background("Blue")
+    
+#create timer
+
+timer1=simplegui.create_timer(1500,timer1)
+timer2=simplegui.create_timer(2000,timer2)
+frame=simplegui.create_frame("Test",300,200)
+
+#start timer
+
+frame.start()
+timer1.start()
+timer2.start()
+
+#Method2
+
+import simplegui 
+
+color = "Red"
+
+
+# Timer handler
+def tick():
+    global color
+    if color == "Red":
+        color = "Blue"
+    else:
+        color = "Red"
+    frame.set_canvas_background(color)
+        
+# Create frame and timer
+frame = simplegui.create_frame("Counter with buttons", 200, 200)
+frame.set_canvas_background(color)
+timer = simplegui.create_timer(3000, tick)
+
+# Start timer
+frame.start()
+timer.start()
