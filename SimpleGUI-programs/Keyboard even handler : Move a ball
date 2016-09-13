@@ -1,0 +1,47 @@
+import simplegui
+
+#global state
+
+width=300
+height=300
+radius=8
+ball_pos=[width/2,height/2]
+
+#define event handlers
+
+def draw(canvas):
+    canvas.draw_circle(ball_pos,radius,4,"Red","White")
+    
+def keyevent(key):
+    move=4
+    if key==simplegui.KEY_MAP["left"]:
+        ball_pos[0]-= move
+        if ball_pos[0]<0:
+            ball_pos[0]=width+ball_pos[0]
+    elif key==simplegui.KEY_MAP["right"]:
+        ball_pos[0]+= move
+        if ball_pos[0]>width:
+            ball_pos[0]=ball_pos[0]-width
+    elif key==simplegui.KEY_MAP["down"]:
+        ball_pos[1]+= move
+        if ball_pos[1]>height:
+            ball_pos[1]=ball_pos[1]-height
+        
+    elif key==simplegui.KEY_MAP["up"]:
+        ball_pos[1]-= move
+        if ball_pos[1]<0:
+            ball_pos[1]=height+ball_pos[1]
+        print ball_pos[1]
+        
+#create frame
+
+frame=simplegui.create_frame("Moving ball",width,height)
+
+#register event handlers
+
+frame.set_draw_handler(draw)
+frame.set_keydown_handler(keyevent)
+
+#start frame
+frame.start()
+    
