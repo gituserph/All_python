@@ -1,0 +1,39 @@
+import simplegui
+
+#global state
+
+width=300
+height=300
+radius=5
+init_pos=[width/2,height/2]
+vel=[5,3]
+time = 0
+ball_pos=[0,0]
+#define event handlers
+
+def tick():
+    global time
+    time+=1
+    
+def draw(canvas):
+    global ball_pos
+    ball_pos[0]=init_pos[0]+time*vel[0]
+    ball_pos[1]=init_pos[1]+time*vel[1]  
+    canvas.draw_circle(ball_pos,radius,5,"Red")
+    
+
+        
+#create frame
+
+frame=simplegui.create_frame("Moving ball",width,height)
+timer=simplegui.create_timer(250,tick)
+
+#register event handlers
+
+frame.set_draw_handler(draw)
+
+
+#start frame
+frame.start()
+timer.start()
+    
