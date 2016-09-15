@@ -1,0 +1,40 @@
+#draw multiple balls using a list and turn them green if the same ball is clicked
+
+import simplegui
+import math
+
+#global state
+width=300
+height=300
+ball_radius=10
+color="Red"
+
+ball_list=[]
+
+#define event handlers
+def distance(p,q):
+    return math.sqrt((p[0]-q[0])**2+(p[1]-q[1])**2)
+    
+def click(pos):
+    changed=False
+    for ball in ball_list:
+        if distance([ball[0],ball[1]],pos)<ball_radius:
+            ball[2]="Green"
+            changed=True
+            
+    if not changed:
+            ball_list.append([pos[0],pos[1],"Red"])
+            
+    
+def draw(canvas):
+    for ball in ball_list:
+        canvas.draw_circle([ball[0],ball[1]],ball_radius,2,"Black",ball[2])
+
+#register handlers
+
+frame=simplegui.create_frame("Test",width,height)
+frame.set_mouseclick_handler(click)
+frame.set_draw_handler(draw)
+
+#start frame
+frame.start()
