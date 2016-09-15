@@ -1,0 +1,40 @@
+#draw a circle where clicked. If clicked again within the same circle, change the color to green if not draw a circle at the clicked position
+
+import simplegui
+import math
+
+#global state
+width=300
+height=300
+ball_radius=10
+color="Red"
+ball_pos=[width/2,height/2]
+
+#define event handlers
+def distance(p,q):
+    return math.sqrt((p[0]-q[0])**2+(p[1]-q[1])**2)
+    
+
+def click(pos):
+    global ball_pos,color
+    
+    if distance(pos,ball_pos)<ball_radius:
+        color="Green"
+    else:
+        ball_pos=list(pos)
+        color="Red"
+    
+    
+    
+def draw(canvas):
+    canvas.draw_circle(ball_pos,ball_radius,0.5,"Black",color)
+
+#register handlers
+
+frame=simplegui.create_frame("Test",width,height)
+frame.set_mouseclick_handler(click)
+frame.set_draw_handler(draw)
+frame.set_canvas_background("White")
+
+#start frame
+frame.start()
