@@ -1,0 +1,27 @@
+import simplegui
+
+#global state
+width=400
+height=300
+position=[0,0]
+#define event handlers
+
+def click(pos):
+    global position
+    position=pos
+    
+def draw(canvas):
+    canvas.draw_text(str(position),[width/2,height/2],30,"Red")
+
+#create frame
+frame=simplegui.create_frame("Test",width,height)
+
+#register event handlers
+
+frame.set_draw_handler(draw)
+frame.set_mouseclick_handler(click)
+
+
+#start frame
+frame.start()
+
