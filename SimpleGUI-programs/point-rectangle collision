@@ -1,0 +1,32 @@
+#check if the moving point-rectangle will overlap
+
+import simplegui
+
+#global state
+point=[10,20]
+move=[3,0.7]
+rect_ul=[50,50]
+rect_ur=[180,50]
+rect_ll=[50,140]
+rect_lr=[180,140]
+
+#define event handlers
+
+def tick():
+    global point
+    point=[point[0]+move[0],point[1]+move[1]]
+    
+def draw(canvas):
+  
+    canvas.draw_polyline([rect_ul, rect_ur, rect_lr, rect_ll, rect_ul], 2, 'Red')
+    canvas.draw_point(point,"Green")
+
+
+#register event handler
+frame=simplegui.create_frame("collison test",400,400)
+frame.set_draw_handler(draw)
+timer=simplegui.create_timer(1000,tick)
+
+#start frame
+frame.start()
+timer.start()
