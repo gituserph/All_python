@@ -1,0 +1,33 @@
+#Write a program that draws a polyline (an open polygon) based on a sequence of mouse clicks. 
+#The first click should create a point. Subsequent clicks should add a new segment to the polyline.
+
+import simplegui
+
+#global state
+
+width=300
+height=300
+points=[]
+#define handlers
+
+def click(pos):
+    
+    points.append(pos)
+    print points[0]
+    
+def clear():
+    global points
+    points=[]
+    
+def draw(canvas):
+    
+    if len(points)>0:
+        canvas.draw_circle(points[0],1,1,"Red")
+        canvas.draw_polyline(points,1,"Red")
+   
+frame=simplegui.create_frame("test",300,300)
+frame.set_draw_handler(draw)
+frame.set_mouseclick_handler(click)
+frame.add_button("clear",clear,100)
+frame.start()
+    
