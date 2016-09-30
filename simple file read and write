@@ -1,0 +1,9 @@
+fw=open("test.txt",'w') #fw is a file handle
+fw.write("First line\n")
+fw.write("Second line\n")
+fw.close()
+
+fr=open("test.txt",'r') #fr is a file handle
+file=fr.read() #file is a variable that will hold the contents of the text file
+print file
+fr.close()
