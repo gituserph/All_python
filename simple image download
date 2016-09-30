@@ -1,0 +1,9 @@
+import random
+import urllib
+
+def download_image(url):
+	name=random.randrange(1,100)
+	full_name=str(name)+".jpg"
+	urllib.urlretrieve(url,full_name)
+	
+download_image("http://keenthemes.com/preview/metronic/theme/assets/global/plugins/jcrop/demos/demo_files/image1.jpg")
