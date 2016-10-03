@@ -1,0 +1,17 @@
+stock={
+	'QCOM':68.71,
+	'GOOG':800.38,
+	'APPL':112.52,
+	'FB':128.77,
+}
+
+#use the values as the first element of the zip set
+
+#minimum
+print (min(zip(stock.values(),stock.keys())))
+
+#maximum
+print (max(zip(stock.values(),stock.keys())))
+
+#sorted
+print (sorted(zip(stock.values(),stock.keys())))
