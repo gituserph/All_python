@@ -1,0 +1,13 @@
+#works in python 2
+
+first=['seattle','san diego']
+second=['wa','ca']
+
+third=zip(first,second)
+
+for a,b in third:
+	print a,b
+  
+#output
+#seattle wa
+#san diego ca
