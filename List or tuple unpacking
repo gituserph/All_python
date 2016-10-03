@@ -1,0 +1,9 @@
+#calculate average of a list of numbers after dropping the first and the last values
+# the *var_name unpacking works only in python3
+
+def calc_avg(grades):
+	first,*middle,last=grades
+	avg=sum(middle)/len(middle)
+	print avg
+	
+calc_avg([23,24,18,10,24])
