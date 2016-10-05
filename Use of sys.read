@@ -1,0 +1,16 @@
+import sys
+print 'Enter your name: ',
+ 
+name = ''
+ 
+while True:
+   c = sys.stdin.read(1) #reads one char from the keyboard at a time.
+   if c == '\n':
+      break
+   name = name + c
+ 
+print 'Your name is:', name
+
+
+v=sys.stdin.read(4) #will read 4 chars from the keyboard at a time. If aaaabbbb is entered, v= aaaa. bbbb is ingored
+print v
