@@ -1,0 +1,25 @@
+list=[1,2,3]
+#desired output n= 123
+
+def magic(numList):         # [1,2,3]
+    s = map(str, numList)   # ['1','2','3']
+    s = ''.join(s)          # '123'
+    s = int(s)              # 123
+    return s
+
+# As a one-liner  
+num = int(''.join(map(str,numList)))
+
+#used here to convert decimal to binary
+
+dec=6
+temp=dec
+list=[]
+while temp>0:
+	list.append(temp%2)
+	temp=temp//2
+result=list[::-1]
+
+
+binary = int(''.join(map(str,result)))
+print binary
