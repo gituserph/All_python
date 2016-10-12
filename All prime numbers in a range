@@ -1,0 +1,13 @@
+n=1000
+list=[]
+for i in range(2,n+1):
+	for j in range(2,i):
+		if i%j==0:
+			
+			break
+	else:
+		list.append(i)
+			
+
+print "the list of prime numbers upto {0} are {1}".format(n,list)
+		
