@@ -1,0 +1,13 @@
+x=2000
+
+for num in range(1,x+1):
+	order= len(str(num))
+	temp=num	
+	result=0
+	while temp>0:
+		digit=temp%10
+		result+=digit**order
+		temp=temp//10
+	
+	if result==num:
+		print num
