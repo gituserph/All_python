@@ -1,0 +1,18 @@
+num = int(raw_input("Enter a number"))
+if num==1:
+	print "1 is a composite number"
+	
+elif num >1:
+	
+	for i in range(2,num):
+		if num%i==0:
+			print "{0} is not a prime number and is divisible by {1} {2} times".format(num,i,num//i)
+			break
+	else:
+		print "{0} is a prime number".format(num)
+else:
+	print "{0} is a prime number".format(num)
+		
+			
+#We could have used the range, [2, num / 2] or [2, num ** 0.5]. 
+#The later range is based on the fact that a composite number must have a factor less than square root of that number; otherwise the number is prime.
