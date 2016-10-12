@@ -1,0 +1,32 @@
+#A positive integer is called an Armstrong number of order n if
+#abcd... = a**n + b**n + c**n + d**n + ...
+#where n is the number of digits in the number
+
+order= len(str(n))
+
+#using string
+n=1234
+sum=0
+for digit in str(n):
+	sum+=int(digit)**order
+
+if sum==n:
+	print "number is armstrong"
+else:
+	print "number is not armstrong"
+
+	
+#using % and //
+num=1634
+temp=num	
+result=0
+while temp>0:
+	digit=temp%10
+	result+=digit**order
+	temp=temp//10
+	
+if result==num:
+	print "armstrong"
+	
+else:
+	print "not armstrong"
