@@ -1,0 +1,18 @@
+def hcf(a,b):
+	if a < b:
+		n=a
+	else:
+		n=b
+	for i in range(1,n+1):
+		if ((a%i==0) and (b%i==0)):
+			hcf=i
+	return hcf
+	
+list=[40,80,120,160,200,240]
+
+#apply hcf function to two numbers at a time in the list
+
+for i in range(1,len(list)):
+	list[i],list[i-1]=hcf(list[i-1],list[i]),hcf(list[i-1],list[i])
+print "HCF for the list of numbers is {0}".format(list[len(list)-1])
+	
