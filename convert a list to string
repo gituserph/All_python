@@ -1,0 +1,11 @@
+#convert a list to string
+
+list=['a','p','p','l','e']
+
+string=''
+
+for i in list:
+	string=string+i
+	
+print string
+
