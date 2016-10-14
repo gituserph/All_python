@@ -1,0 +1,14 @@
+L1=[[2,3],[4,5],[6,7]]
+
+L2=[[4,5],[6,7],[8,9]]
+
+L3=[]
+
+for i in range(len(L1)): #outer index is the number of rows desired in the resultant matrix
+	temp=[]
+	for j in range(len(L1[0])): #inner index is the number of columns desired in the resultant matrix
+		value=L1[i][j]+L2[i][j]
+		temp.append(value)
+	L3.append(temp)
+	
+print L3
