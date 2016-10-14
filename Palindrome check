@@ -1,0 +1,13 @@
+word="malama"
+temp=[]
+index=len(word)
+
+while index:
+	index=index-1
+	temp.append(word[index])
+rev_word="".join(temp)	
+
+if word==rev_word:
+	print "It is a palindrome"
+else:
+	print "Not a palindrome"
