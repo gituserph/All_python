@@ -1,0 +1,11 @@
+
+a function which calculates the arithmetic mean of a variable number of values.
+
+def mean(x,*n):
+	sum=x
+	for i in n:
+		sum+=i
+	avg=sum/(len(n)+1)
+	return avg
+	
+print mean(5,10,2,1,6)
