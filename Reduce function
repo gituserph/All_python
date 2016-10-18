@@ -1,0 +1,17 @@
+# Example of reduce function
+
+# find the greatest num in a list
+list=[23,45,67,2,3,99,201,34]
+
+f=lambda x,y: x if x>y else y
+n=reduce(f,list)
+
+print n
+
+#sum of natural numbers
+
+f=lambda x,y: x+y
+
+sum=reduce(f,range(1,101))
+
+print sum
