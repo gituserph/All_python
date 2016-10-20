@@ -1,0 +1,27 @@
+#count all the vowels
+
+message="As Donald Trump and Hillary Clinton shook hands with moderator Chris Wallace and greeted their families after the end of Wednesday night's presidential debate, the broadcast hosts delivered their verdict."
+message=message.lower()
+
+count={}
+vowels="aeiou"
+for char in message:
+	if char in vowels:
+		count.setdefault(char,0)
+		count[char]+=1
+		
+print(count)
+
+
+#count all the characters
+
+message="As Donald Trump and Hillary Clinton shook hands with moderator Chris Wallace and greeted their families after the end of Wednesday night's presidential debate, the broadcast hosts delivered their verdict."
+message=message.lower()
+
+count={}
+
+for char in message:
+  count.setdefault(char,0)
+	count[char]+=1
+		
+print(count)
