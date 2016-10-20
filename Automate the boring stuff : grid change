@@ -14,4 +14,5 @@ for i in range(len(grid[0])):
 	for j in range(len(grid)):
 		value= grid[j][i]
 		row.append(value)
-	print row
+	row_string="".join(row)
+	print row_string
