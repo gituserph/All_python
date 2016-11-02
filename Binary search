@@ -1,0 +1,20 @@
+list=[12,1,56,89,34,28,405,38,103,203,4239,42]
+
+list.sort()
+
+num=42
+
+first=0
+last=len(list)-1
+found=False
+
+while first<=last and not found:
+	mid=(first+last)/2
+	if num==list[mid]:
+		found=True
+	else:
+		if num<list[mid]:
+			last=mid-1
+		else:
+			first=mid+1
+print found
